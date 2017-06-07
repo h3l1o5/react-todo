@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import './index.css'
 
 class App extends Component {
   constructor() {
@@ -28,7 +29,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='main'>
         <h1>{this.state.greetingMessage}</h1>
         <form onSubmit={this.handleSubmit}>
           <input onChange={this.onChange} placeholder="your name here" value={this.state.user}/>
