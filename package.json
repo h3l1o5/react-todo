@@ -4,7 +4,7 @@
   "description": "a simple reactjs boilerplate",
   "main": "index.jsx",
   "scripts": {
-    "dev": "webpack-dev-server --devtool eval --progress --colors"
+    "dev": "webpack-dev-server --open --devtool eval --progress --colors"
   },
   "author": "martysun",
   "license": "ISC",

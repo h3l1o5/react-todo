@@ -28,7 +28,10 @@ class TodoList extends Component {
         return
       }
 
-      const newItems = [e.target.value, ...this.state.items]
+      const newItems = [
+        {text: e.target.value, isCompleted: false},
+         ...this.state.items
+      ]
       this.setState({
         items: newItems,
         inputText: ''
@@ -37,8 +40,8 @@ class TodoList extends Component {
   }
 
   handleRemoveItem = (index) => {
-    let oldItems = this.state.items
-    const newItems = oldItems.slice(0, index).concat(oldItems.slice(index + 1))
+    let newItems = this.state.items
+    newItems[index].isCompleted = !newItems[index].isCompleted
     this.setState({
       items: newItems
     })
@@ -49,15 +52,16 @@ class TodoList extends Component {
       <div>
         <input 
           type="text"
+          style={{fontSize: '20px'}}
           value={this.state.inputText}  
           placeholder={this.props.initText}
           onChange={this.handleChange}
           onKeyPress={this.handleEnterPressed}
         />
         <ul>
-          {this.state.items.map((value, index) => (
+          {this.state.items.map((element, index) => (
             <li key={index}>
-              <TodoItem index={index} text={value} onItemClicked={this.handleRemoveItem} />
+              <TodoItem index={index} text={element.text} isCompleted={element.isCompleted} onItemClicked={this.handleRemoveItem} />
             </li>
           ))}
         </ul>
