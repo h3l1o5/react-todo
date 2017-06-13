@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import { ItemStyle } from '../style/todo/style'
+
 class TodoItem extends Component {
   static propTypes = {
     text: PropTypes.string.isRequired,
@@ -12,10 +14,7 @@ class TodoItem extends Component {
   constructor() {
     super()
     this.state = {
-      style: {
-        color: 'green',
-        textDecoration: ''
-      }
+      style: ItemStyle
     }
   }
 
@@ -29,10 +28,7 @@ class TodoItem extends Component {
       })
     } else {
       this.setState({
-        style: {
-          color: 'green',
-          textDecoration: ''
-        }
+        style: ItemStyle
       })
     }
   }

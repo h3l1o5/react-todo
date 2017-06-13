@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
-import TodoList from './components/TodoList'
+import TodoApp from './components/TodoApp'
+import './style/index.css'
 
 class App extends Component {
 
   render() {
     return (
-      <div>
-        <TodoList initText='ADD TODO'/>
+      <div className='main'>
+        <TodoApp initText='ADD TODO'/>
       </div>
     )
   }
