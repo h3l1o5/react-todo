@@ -23,6 +23,9 @@ class TodoAddForm extends Component {
 
   handleEnterPressed = (e) => {
     if(e.key === 'Enter') {
+      if(!this.state.inputText) {
+        return
+      }
       this.props.onSubmitNewTodo(this.state.inputText)
       this.setState({
         inputText: ''
